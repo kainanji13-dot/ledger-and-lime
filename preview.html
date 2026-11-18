@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Monday variance report | Ledger &amp; Lime</title>
+<meta name="description" content="Drop in your Monday variance report and see your biggest shortages in seconds. Your file is read in your browser and never uploaded.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:Inter,Arial,sans-serif}
+.ll{--ink:#16201B;--forest:#12352A;--forest2:#1C4A3A;--lime:#B7E04B;--gray:#F2F4F1;--gray2:#E3E7E2;--mid:#5B6660;--white:#FFFFFF;background:var(--white);color:var(--ink);line-height:1.55}
+.ll *{box-sizing:border-box}
+.ll h1,.ll h2,.ll h3{font-family:'Space Grotesk',Inter,Arial,sans-serif;margin:0;letter-spacing:-0.01em;text-wrap:balance}
+.ll p{margin:0}
+.ll .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.ll .btn{display:inline-block;background:var(--lime);color:var(--forest);padding:14px 24px;border-radius:8px;text-decoration:none;font-weight:700;font-size:16px}
+.ll .btn:hover{background:#C6EA66;color:var(--forest)}
+.ll .btn2{display:inline-block;border:1.5px solid rgba(255,255,255,0.45);color:#fff;padding:13px 22px;border-radius:8px;text-decoration:none;font-weight:600;font-size:16px}
+.ll .btn2:hover{background:rgba(255,255,255,0.08);color:#fff}
+.ll .eyebrow{font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--forest2)}
+.ll .grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.ll .card{background:var(--white);border:1px solid var(--gray2);border-radius:14px;padding:24px;min-width:0}
+.ll .num{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:var(--forest);color:var(--lime);font-weight:700;font-size:15px;margin-bottom:14px}
+.ll .tag{display:inline-block;font-size:12px;font-weight:700;padding:4px 10px;border-radius:999px}
+.ll table{border-collapse:collapse;width:100%;min-width:620px;font-size:15px}
+.ll th{text-align:left;padding:12px 14px;border-bottom:2px solid var(--ink);font-size:13px;letter-spacing:0.04em;text-transform:uppercase;color:var(--mid)}
+.ll td{padding:14px;border-bottom:1px solid var(--gray2);vertical-align:top}
+.ll a{color:inherit}
+@media (max-width:640px){.ll .hero-pad{padding-top:40px!important;padding-bottom:48px!important}}
+</style>
+<style>
+.ll .nav{display:flex;flex-wrap:wrap;gap:6px 22px;align-items:center}
+.ll .nav a{color:#D3DDD7;text-decoration:none;font-weight:500;font-size:15px}
+.ll .nav a:hover,.ll .nav a.on{color:#fff}.ll .nav a.on{border-bottom:2px solid var(--lime)}
+.ll .doc{background:#fff;border:1px solid var(--gray2);border-radius:14px;box-shadow:0 18px 44px rgba(18,53,42,.12);padding:clamp(18px,4vw,40px)}
+.ll .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));border:1px solid var(--gray2);border-radius:10px;margin:22px 0 8px}
+.ll .stats div{padding:14px 16px;border-right:1px solid var(--gray2);min-width:0}.ll .stats div:last-child{border-right:0}
+.ll .stats small{display:block;color:var(--mid);font-size:12px}.ll .stats b{font:700 26px 'Space Grotesk',sans-serif}.ll .stats .neg{color:#A8431A}
+.ll .rh{font:600 12px Inter,sans-serif;text-transform:uppercase;letter-spacing:.08em;color:var(--mid);margin:34px 0 10px}
+.ll ol.fl{list-style:none;margin:0;padding:0}.ll ol.fl li{display:grid;grid-template-columns:30px 1fr auto;gap:12px;padding:16px 0;border-top:1px solid var(--gray2)}
+.ll ol.fl li:last-child{border-bottom:1px solid var(--gray2)}.ll .fn{font:700 16px 'Space Grotesk',sans-serif;color:var(--forest2)}
+.ll .ft{display:flex;flex-wrap:wrap;gap:8px;align-items:baseline}.ll .ft h3{font-size:16px}
+.ll .tg{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--forest2);border:1px solid var(--gray2);border-radius:4px;padding:1px 6px}
+.ll .fb p{margin:4px 0 0;color:var(--mid)}.ll .fb p.nx{color:var(--ink)}.ll .fa{font:700 20px 'Space Grotesk',sans-serif;white-space:nowrap}
+.ll .tw{overflow-x:auto}.ll .tw table{min-width:560px;font-size:14px}.ll .tw th{padding:8px;font-size:12px}.ll .tw td{padding:8px}
+.ll .r{text-align:right;white-space:nowrap}.ll .st{font-size:12px;color:var(--mid)}.ll .st.recording{color:var(--forest2);font-weight:600}.ll .st.check{color:#A8431A;font-weight:600}
+.ll .fine{color:var(--mid);font-size:12.5px;margin-top:26px;max-width:66ch}
+.ll .ck{list-style:none;margin:12px 0 0;padding:0}.ll .ck li{padding:8px 0 8px 28px;position:relative;border-bottom:1px solid var(--gray2)}.ll .ck li:before{content:"\2713";position:absolute;left:0;color:var(--forest2);font-weight:700}
+@media(max-width:520px){.ll ol.fl li{grid-template-columns:24px 1fr}.ll .fa{grid-column:2}.ll .stats div{border-right:0;border-bottom:1px solid var(--gray2)}}
+</style>
+<style>
+.ll .drop{border:2px dashed #9DB3A6;border-radius:14px;background:#fff;padding:34px 20px;text-align:center;transition:.15s}
+.ll .drop.over{background:#F1F8E4;border-color:var(--forest2)}
+.ll .drop b{font-family:'Space Grotesk',sans-serif;font-size:20px}
+.ll .lk{filter:blur(5px);user-select:none;pointer-events:none}
+.ll .pvrow{display:grid;grid-template-columns:1fr auto;gap:12px;padding:12px 0;border-bottom:1px solid var(--gray2);align-items:center}
+.ll .lockbox{position:relative;border:1px solid var(--gray2);border-radius:12px;overflow:hidden;margin-top:14px}
+.ll .lockmsg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:16px;background:rgba(255,255,255,.55);font-weight:600;color:var(--forest)}
+.ll .lbl{display:flex;gap:18px;flex-wrap:wrap;margin:14px 0 0;font-size:14px;color:var(--mid)}
+.ll .lbl label{cursor:pointer}
+.ll .ghost{background:none;border:0;color:var(--forest2);font:inherit;font-weight:700;text-decoration:underline;cursor:pointer;padding:0}
+</style>
+</head>
+<body>
+<div class="ll">
+<div style="background:var(--forest)">
+<div class="wrap" style="display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between;align-items:center;padding-top:18px;padding-bottom:18px">
+<a href="index.html" style="text-decoration:none;display:flex;align-items:center;gap:10px;color:#fff;font-family:'Space Grotesk',Inter,sans-serif;font-weight:700;font-size:20px"><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:var(--lime)"></span>Ledger &amp; Lime</a>
+<div class="nav"><a href="index.html">Home</a><a href="sample.html">Sample Report</a><a href="preview.html" class=on>Monday Report</a><a href="how-it-works.html">How It Works</a><a href="index.html#contact">Contact</a><a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3d-kWNUilyO-PQXc_KNxZRjB3SCHR6Qv2acl9O5cro4Y67rBeFdjdlTVugUkzwluVVbBwXnNM_" target="_blank" rel="noopener" class="btn2" style="padding:9px 16px;font-size:14px;color:#fff">Book a Screening Call</a></div>
+</div>
+</div>
+
+<div style="background:var(--gray)"><div class="wrap" style="padding-top:56px;padding-bottom:56px">
+<div class="eyebrow">Free Monday report preview</div>
+<h1 style="font-size:clamp(32px,5vw,48px);margin:10px 0 14px">Your Monday Variance Report, One Step Further.</h1>
+<p style="color:var(--mid);font-size:18px;max-width:720px;margin-bottom:26px">After Monday&rsquo;s count, drop in your variance report (CSV or Excel). You&rsquo;ll see your total shortage and your top three items. Your file is read inside your browser. Nothing is uploaded or stored.</p>
+<div class="drop" id="drop"><b>Drop your Monday variance report here</b><p style="color:var(--mid);margin:8px 0 16px">CSV or Excel &middot; any variance or actual-vs-theoretical report with an item column and a variance column</p><button class="btn" id="pick" style="border:0;cursor:pointer">Choose a File</button><p style="margin-top:14px;font-size:14px;color:var(--mid)">No file handy? <button class="ghost" id="trysample">Try a Sample File</button></p><input type="file" id="file" accept=".csv,.xlsx,.xls,.txt" style="display:none"></div>
+<div class="lbl"><span>In my report a shortage shows as:</span><label><input type="radio" name="sign" value="neg" checked> a negative number</label><label><input type="radio" name="sign" value="pos"> a positive number</label></div>
+<div id="out"></div>
+</div></div>
+<div class="wrap" style="padding-top:56px;padding-bottom:56px"><div class="grid">
+<div class="card"><h3 style="font-size:19px;margin-bottom:8px">Private by Design</h3><p style="color:var(--mid)">The file is read by your browser only. It is never sent to me or anyone else.</p></div>
+<div class="card"><h3 style="font-size:19px;margin-bottom:8px">A Preview, Not a Diagnosis</h3><p style="color:var(--mid)">It shows what your Monday report already says. Finding out whether each shortage is a recording issue or a physical check is the review.</p></div>
+<div class="card"><h3 style="font-size:19px;margin-bottom:8px">Want to See the Full Thing?</h3><p style="color:var(--mid)"><a href="sample.html" style="color:var(--forest2);font-weight:700">Open the Sample Report &rarr;</a></p></div>
+</div></div>
+<div style="background:var(--forest);color:#fff">
+<div class="wrap" style="padding-top:56px;padding-bottom:56px">
+<h2 style="font-size:clamp(26px,4vw,36px);margin-bottom:12px">Want This for Your Venue?</h2>
+<p style="max-width:620px;color:#D3DDD7;margin-bottom:22px">Tell me which variance your team keeps investigating and which system you export from. I&rsquo;ll reply to set up a short screening call.</p>
+<a class="btn" href="mailto:kai.nanji13@gmail.com">Email Kai</a>
+<p style="margin-top:14px;color:#A9B8AF;font-size:14px">kai.nanji13@gmail.com &middot; <a href="https://www.linkedin.com/in/kainanji/" style="color:var(--lime)">LinkedIn</a></p>
+</div></div>
+<div style="background:var(--ink);color:#9AA7A0">
+<div class="wrap" style="padding-top:24px;padding-bottom:24px;font-size:13px">An independent service run by a Toronto bar-operations professional. Not affiliated with any employer, restaurant group or software vendor. Example figures are fictional. No savings are guaranteed.</div>
+</div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script>
+(function(){
+var SAMPLE="Item,Category,Variance $\nHouse Gin X,gin,102.00\nPremium Gin Y,gin,-192.00\nVodka Z,vodka,-3.50\nTequila Blanco,tequila,-139.20\nRye Whisky,whisky,-9.30\nAmaro,liqueur,-8.80\nDry Vermouth,vermouth,0.00\nSpirit A (batch base),spirit,-143.64\nSpirit B (batch base),spirit,-65.52\nMixer (batch base),mixer,-19.90\nDraft Lager,draft,-11.41\nRed House Wine,wine,-5.60";
+var $=function(i){return document.getElementById(i)};
+function money(v){var a=Math.abs(v);return (v<0?"-":"")+"$"+a.toLocaleString("en-CA",{maximumFractionDigits:0})}
+function num(x){if(typeof x==="number")return x;if(x==null)return NaN;var t=String(x).trim();if(!t)return NaN;var neg=/^\(.*\)$/.test(t)||/^-/.test(t)||/-$/.test(t);t=t.replace(/[^0-9.]/g,"");if(!t)return NaN;var n=parseFloat(t);return neg?-n:n}
+function csv(text){var rows=[],row=[],cur="",q=false;for(var i=0;i<text.length;i++){var c=text[i];if(q){if(c=='"'){if(text[i+1]=='"'){cur+='"';i++}else q=false}else cur+=c}else if(c=='"')q=true;else if(c==","){row.push(cur);cur=""}else if(c=="\n"||c=="\r"){if(c=="\r"&&text[i+1]=="\n")i++;row.push(cur);rows.push(row);row=[];cur=""}else cur+=c}if(cur!==""||row.length){row.push(cur);rows.push(row)}return rows}
+var state={rows:null,name:""};
+function analyze(rows){
+ var hi=-1,vi=-1,ni=-1,qtyOnly=false;
+ for(var r=0;r<Math.min(rows.length,20);r++){
+  var h=(rows[r]||[]).map(function(x){return String(x==null?"":x).toLowerCase()});
+  var vcols=[];h.forEach(function(x,i){if(/var|diff/.test(x))vcols.push(i)});
+  var ncol=-1;h.forEach(function(x,i){if(ncol<0&&/(item|product|name|description|sku)/.test(x))ncol=i});
+  if(vcols.length&&ncol>=0){hi=r;ni=ncol;
+   var money=vcols.filter(function(i){return /[$]|value|cost|amount|dollar|\bcad\b/.test(h[i])});
+   var pct=function(i){return /%|pct|percent/.test(h[i])};
+   var pick=money.filter(function(i){return !pct(i)})[0];
+   if(pick==null){var nonp=vcols.filter(function(i){return !pct(i)});pick=nonp.length?nonp[nonp.length-1]:vcols[0];qtyOnly=true}
+   vi=pick;break}
+ }
+ if(hi<0)return null;
+ var items=[];
+ for(var r2=hi+1;r2<rows.length&&items.length<5000;r2++){var row=rows[r2]||[];var nm=String(row[ni]==null?"":row[ni]).trim();var v=num(row[vi]);if(!nm||isNaN(v))continue;if(/^total|^grand|^subtotal/i.test(nm))continue;items.push({n:nm,v:v})}
+ return items.length?{items:items,qty:qtyOnly}:null
+}
+function render(){
+ var out=$("out");var a=analyze(state.rows);
+ if(!a){out.innerHTML='<div class="card" style="margin-top:20px"><h3 style="font-size:19px;margin-bottom:8px">I Couldn&rsquo;t Find the Variance Columns</h3><p style="color:var(--mid)">The preview looks for a column with the item name and a column with the word &ldquo;variance&rdquo; in its heading. Most variance or actual-vs-theoretical reports have both. If yours doesn&rsquo;t, email it to me and I&rsquo;ll tell you what the full review would need.</p></div>';return}
+ var dir=document.querySelector('input[name=sign]:checked').value;
+ var list=a.items.map(function(x){return {n:x.n,short:(dir==="neg"?-x.v:x.v)}});
+ var short=list.filter(function(x){return x.short>0}).sort(function(a,b){return b.short-a.short});
+ var total=short.reduce(function(s,x){return s+x.short},0);
+ var net=list.reduce(function(s,x){return s+x.short},0);
+ var unit=a.qty?"units":"dollars";var fmt=function(v){return a.qty?(Math.round(v*10)/10).toLocaleString("en-CA")+" units":money(v)};
+ var top=short.slice(0,3),rest=short.slice(3);
+ var h='<div class="doc" style="margin-top:22px"><div class="eyebrow">Your Monday report preview</div><h2 style="font-size:28px;margin:8px 0 4px">'+(State.name?state.name.replace(/</G,"&lt;"):"Your File")+'</h2><p style="color:var(--mid)">'+a.items.length+' items read &middot; '+short.length+' short &middot; read in your browser, nothing uploaded</p>';
+ h+='<div class="stats"><div><small>Total shortage</small><b class="neg">'+fmt(total)+'</b></div><div><small>Net after overages</small><b>'+fmt(net)+'</b></div><div><small>Items short</small><b>'+short.length+'</b></div></div>';
+ h+='<div class="rh">Your biggest shortages</div>';
+ top.forEach(function(x,i){h+='<div class="pvrow"><div><b>'+(i+1)+'. '+x.n.replace(/</g,"&lt;")+'</b><div style="color:var(--mid);font-size:14px">Why: <span class="lk">recording issue or physical check, with the evidence</span></div></div><div style="font:700 20px \'Space Grotesk\',sans-serif">-'+fmt(x.short)+'</div></div>'});
+ if(rest.length){h+='<div class="lockbox"><div style="padding:6px 16px">';rest.slice(0,4).forEach(function(x){h+='<div class="pvrow lk"><div><b>Item name hidden</b></div><div>-'+fmt(x.short)+'</div></div>'});h+='</div><div class="lockmsg">'+rest.length+' more short item'+(rest.length>1?'s':'')+' in the full review</div></div>'}
+ h+='<div class="card" style="margin-top:22px;background:var(--forest);border-color:var(--forest);color:#fff"><h3 style="font-size:22px;margin-bottom:8px">Your System Shows You the Numbers. It Doesn&rsquo;t Say Why.</h3><p style="color:#D3DDD7;margin-bottom:16px">The full review sorts every item into recording issue, physical check, or normal count noise, with the evidence and a next step for each, and tells you what the data can&rsquo;t explain.</p><a class="btn" href="mailto:kai.nanji13@gmail.com?subject=Full%20variance%20review&body=Hi%20Kai%2C%20I%20tried%20the%20free%20preview%20and%20would%20like%20to%20talk%20about%20a%20full%20review.">Get the Full Review</a></div>';
+ h+='<p class="fine">This preview only reads the totals in your file. It does not analyze causes, does not guess who or what is responsible, and is not a savings estimate. Sign convention is your choice above.</p></div>';
+ out.innerHTML=h;out.scrollIntoView({behavior:"smooth",block:"start"})
+}
+function load(file){
+ if(file.size>10*1024*1024){$("out").innerHTML='<p style="color:#A8431A;margin-top:16px">That file is over 10 MB. Please send me a smaller export.</p>';return}
+ state.name=file.name;var ext=(file.name.split(".").pop()||"").toLowerCase();var rd=new FileReader();
+ if(ext==="csv"||ext==="txt"){rd.onload=function(){state.rows=csv(String(rd.result));render()};rd.readAsText(file)}
+ else if(window.XLSX){rd.onload=function(){try{var wb=XLSX.read(rd.result,{type:"array"});var ws=wb.Sheets[wb.SheetNames[0]];state.rows=XLSX.utils.sheet_to_json(ws,{header:1,raw:true,defval:""});render()}catch(e){$("out").innerHTML='<p style="color:#A8431A;margin-top:16px">I couldn&rsquo;t read that file. Try saving it as CSV.</p>'}};rd.readAsArrayBuffer(file)}
+ else{$("out").innerHTML='<p style="color:#A8431A;margin-top:16px">Please upload a CSV or Excel file.</p>'}
+}
+var dz=$("drop"),fi=$("file");
+$("pick").onclick=function(){fi.click()};
+fi.onchange=function(){if(fi.files[0])load(fi.files[0])};
+["dragover","dragenter"].forEach(function(e){dz.addEventListener(e,function(ev){ev.preventDefault();dz.classList.add("over")})});
+["dragleave","drop"].forEach(function(e){dz.addEventListener(e,function(ev){ev.preventDefault();dz.classList.remove("over")})});
+dz.addEventListener("drop",function(ev){var f=ev.dataTransfer.files[0];if(f)load(f)});
+$("trysample").onclick=function(){state.name="Sample file (fictional venue)";state.rows=csv(SAMPLE);render()};
+Array.prototype.forEach.call(document.querySelectorAll("input[name=sign]"),function(i){i.onchange=function(){if(state.rows)render()}});
+})();
+</script></body>
+</html>
