@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ledgerandlime.ca/sitemap.xml
