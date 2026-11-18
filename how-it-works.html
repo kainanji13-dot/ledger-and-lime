@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How it works | Ledger &amp; Lime</title>
+<meta name="description" content="How a Ledger &amp; Lime beverage variance review works, what to send, and what you get.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:Inter,Arial,sans-serif}
+.ll{--ink:#16201B;--forest:#12352A;--forest2:#1C4A3A;--lime:#B7E04B;--gray:#F2F4F1;--gray2:#E3E7E2;--mid:#5B6660;--white:#FFFFFF;background:var(--white);color:var(--ink);line-height:1.55}
+.ll *{box-sizing:border-box}
+.ll h1,.ll h2,.ll h3{font-family:'Space Grotesk',Inter,Arial,sans-serif;margin:0;letter-spacing:-0.01em;text-wrap:balance}
+.ll p{margin:0}
+.ll .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.ll .btn{display:inline-block;background:var(--lime);color:var(--forest);padding:14px 24px;border-radius:8px;text-decoration:none;font-weight:700;font-size:16px}
+.ll .btn:hover{background:#C6EA66;color:var(--forest)}
+.ll .btn2{display:inline-block;border:1.5px solid rgba(255,255,255,0.45);color:#fff;padding:13px 22px;border-radius:8px;text-decoration:none;font-weight:600;font-size:16px}
+.ll .btn2:hover{background:rgba(255,255,255,0.08);color:#fff}
+.ll .eyebrow{font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--forest2)}
+.ll .grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.ll .card{background:var(--white);border:1px solid var(--gray2);border-radius:14px;padding:24px;min-width:0}
+.ll .num{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:var(--forest);color:var(--lime);font-weight:700;font-size:15px;margin-bottom:14px}
+.ll .tag{display:inline-block;font-size:12px;font-weight:700;padding:4px 10px;border-radius:999px}
+.ll table{border-collapse:collapse;width:100%;min-width:620px;font-size:15px}
+.ll th{text-align:left;padding:12px 14px;border-bottom:2px solid var(--ink);font-size:13px;letter-spacing:0.04em;text-transform:uppercase;color:var(--mid)}
+.ll td{padding:14px;border-bottom:1px solid var(--gray2);vertical-align:top}
+.ll a{color:inherit}
+@media (max-width:640px){.ll .hero-pad{padding-top:40px!important;padding-bottom:48px!important}}
+</style>
+<style>
+.ll .nav{display:flex;flex-wrap:wrap;gap:6px 22px;align-items:center}
+.ll .nav a{color:#D3DDD7;text-decoration:none;font-weight:500;font-size:15px}
+.ll .nav a:hover,.ll .nav a.on{color:#fff}.ll .nav a.on{border-bottom:2px solid var(--lime)}
+.ll .doc{background:#fff;border:1px solid var(--gray2);border-radius:14px;box-shadow:0 18px 44px rgba(18,53,42,.12);padding:clamp(18px,4vw,40px)}
+.ll .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));border:1px solid var(--gray2);border-radius:10px;margin:22px 0 8px}
+.ll .stats div{padding:14px 16px;border-right:1px solid var(--gray2);min-width:0}.ll .stats div:last-child{border-right:0}
+.ll .stats small{display:block;color:var(--mid);font-size:12px}.ll .stats b{font:700 26px 'Space Grotesk',sans-serif}.ll .stats .neg{color:#A8431A}
+.ll .rh{font:600 12px Inter,sans-serif;text-transform:uppercase;letter-spacing:.08em;color:var(--mid);margin:34px 0 10px}
+.ll ol.fl{list-style:none;margin:0;padding:0}.ll ol.fl li{display:grid;grid-template-columns:30px 1fr auto;gap:12px;padding:16px 0;border-top:1px solid var(--gray2)}
+.ll ol.fl li:last-child{border-bottom:1px solid var(--gray2)}.ll .fn{font:700 16px 'Space Grotesk',sans-serif;color:var(--forest2)}
+.ll .ft{display:flex;flex-wrap:wrap;gap:8px;align-items:baseline}.ll .ft h3{font-size:16px}
+.ll .tg{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--forest2);border:1px solid var(--gray2);border-radius:4px;padding:1px 6px}
+.ll .fb p{margin:4px 0 0;color:var(--mid)}.ll .fb p.nx{color:var(--ink)}.ll .fa{font:700 20px 'Space Grotesk',sans-serif;white-space:nowrap}
+.ll .tw{overflow-x:auto}.ll .tw table{min-width:560px;font-size:14px}.ll .tw th{padding:8px;font-size:12px}.ll .tw td{padding:8px}
+.ll .r{text-align:right;white-space:nowrap}.ll .st{font-size:12px;color:var(--mid)}.ll .st.recording{color:var(--forest2);font-weight:600}.ll .st.check{color:#A8431A;font-weight:600}
+.ll .fine{color:var(--mid);font-size:12.5px;margin-top:26px;max-width:66ch}
+.ll .ck{list-style:none;margin:12px 0 0;padding:0}.ll .ck li{padding:8px 0 8px 28px;position:relative;border-bottom:1px solid var(--gray2)}.ll .ck li:before{content:"\2713";position:absolute;left:0;color:var(--forest2);font-weight:700}
+@media(max-width:520px){.ll ol.fl li{grid-template-columns:24px 1fr}.ll .fa{grid-column:2}.ll .stats div{border-right:0;border-bottom:1px solid var(--gray2)}}
+</style>
+</head>
+<body>
+<div class="ll">
+<div style="background:var(--forest)">
+<div class="wrap" style="display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between;align-items:center;padding-top:18px;padding-bottom:18px">
+<a href="index.html" style="text-decoration:none;display:flex;align-items:center;gap:10px;color:#fff;font-family:'Space Grotesk',Inter,sans-serif;font-weight:700;font-size:20px"><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:var(--lime)"></span>Ledger &amp; Lime</a>
+<div class="nav"><a href="index.html">Home</a><a href="sample.html">Sample report</a><a href="how-it-works.html" class=on>How it works</a><a href="index.html#contact">Contact</a><a href="index.html#contact" class="btn2" style="padding:9px 16px;font-size:14px;color:#fff">Book a screening call</a></div>
+</div>
+</div>
+
+<div style="background:var(--gray)"><div class="wrap" style="padding-top:56px;padding-bottom:56px">
+<div class="eyebrow">How it works</div>
+<h1 style="font-size:clamp(32px,5vw,48px);margin:10px 0 14px">About a week, start to finish.</h1>
+<p style="color:var(--mid);font-size:18px;max-width:720px">You send exports you already have. I do the analysis. You get a short list of what to fix and what to check.</p>
+</div></div>
+<div class="wrap" style="padding-top:56px;padding-bottom:24px"><div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(210px,1fr))"><div class="card"><div class="num">1</div><h3 style="font-size:19px;margin-bottom:4px">Screening call</h3><div style="font-size:13px;font-weight:700;color:var(--forest2);margin-bottom:8px">15 minutes</div><p style="color:var(--mid)">Which system do you export from, which variance do you keep chasing, and can the data support a review? If not, you pay nothing.</p></div><div class="card"><div class="num">2</div><h3 style="font-size:19px;margin-bottom:4px">You send exports</h3><div style="font-size:13px;font-weight:700;color:var(--forest2);margin-bottom:8px">Day 0</div><p style="color:var(--mid)">Two finalized, comparable periods: inventory counts and item-level sales, plus recipes for the items we name.</p></div><div class="card"><div class="num">3</div><h3 style="font-size:19px;margin-bottom:4px">I review</h3><div style="font-size:13px;font-weight:700;color:var(--forest2);margin-bottom:8px">Up to 5 business days</div><p style="color:var(--mid)">I run the numbers, check every finding by hand and separate recording issues from things worth a physical check.</p></div><div class="card"><div class="num">4</div><h3 style="font-size:19px;margin-bottom:4px">Memo and checklist</h3><div style="font-size:13px;font-weight:700;color:var(--forest2);margin-bottom:8px">Day 5</div><p style="color:var(--mid)">A plain-language findings memo, an evidence appendix with source rows, and a verification checklist.</p></div><div class="card"><div class="num">5</div><h3 style="font-size:19px;margin-bottom:4px">Walkthrough</h3><div style="font-size:13px;font-weight:700;color:var(--forest2);margin-bottom:8px">20 minutes</div><p style="color:var(--mid)">A call with your manager to go through what to verify first. You decide what to act on.</p></div></div></div>
+<div class="wrap" style="padding-top:40px;padding-bottom:56px"><div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:32px">
+<div><h2 style="font-size:26px">What to send</h2>
+<ul class="ck"><li>Inventory counts for two finalized, comparable periods</li><li>Item-level sales for the same periods (pours or units sold)</li><li>Recipes for any batches or cocktails you want checked</li><li>Purchases or received orders, if available</li><li>Waste, comp and spill logs, if you keep them</li></ul>
+<p style="color:var(--mid);margin-top:14px">CSV or Excel is ideal. If your system can export it, I can work with it. No staff names or payroll.</p></div>
+<div><h2 style="font-size:26px">What you get</h2>
+<ul class="ck"><li>A findings memo: recording issues, physical checks, and count noise</li><li>Dollar value on every finding</li><li>An evidence appendix with the source rows</li><li>A verification checklist for your manager</li><li>A clear statement of what the data can&rsquo;t tell us</li></ul>
+<p style="margin-top:14px"><a href="sample.html" style="color:var(--forest2);font-weight:700">See a sample report &rarr;</a></p></div>
+</div></div>
+<div style="background:var(--gray)"><div class="wrap" style="padding-top:56px;padding-bottom:56px"><div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(300px,1fr))">
+<div class="card"><h3 style="font-size:19px;margin-bottom:8px">Your data</h3><p style="color:var(--mid)">Used only for your review and deleted after delivery unless you ask me to keep it. I never need access to your systems.</p></div>
+<div class="card"><h3 style="font-size:19px;margin-bottom:8px">Price</h3><p style="color:var(--mid)">Fixed, per venue, quoted after the screening call. If the data can&rsquo;t support a review, you pay nothing. If the memo doesn&rsquo;t give you a specific, checkable next step, I refund the fee.</p></div>
+<div class="card"><h3 style="font-size:19px;margin-bottom:8px">Not included</h3><p style="color:var(--mid)">On-site counts, live system changes, recipe or inventory setup, bookkeeping or tax advice, fraud findings, and savings guarantees.</p></div>
+</div></div></div>
+<div style="background:var(--forest);color:#fff">
+<div class="wrap" style="padding-top:56px;padding-bottom:56px">
+<h2 style="font-size:clamp(26px,4vw,36px);margin-bottom:12px">Want this for your venue?</h2>
+<p style="max-width:620px;color:#D3DDD7;margin-bottom:22px">Tell me which variance your team keeps investigating and which system you export from. I&rsquo;ll reply to set up a short screening call.</p>
+<a class="btn" href="mailto:kai.nanji13@gmail.com">Email Kai</a>
+<p style="margin-top:14px;color:#A9B8AF;font-size:14px">kai.nanji13@gmail.com &middot; <a href="https://www.linkedin.com/in/kainanji/" style="color:var(--lime)">LinkedIn</a></p>
+</div></div>
+<div style="background:var(--ink);color:#9AA7A0">
+<div class="wrap" style="padding-top:24px;padding-bottom:24px;font-size:13px">An independent service run by a Toronto bar-operations professional. Not affiliated with any employer, restaurant group or software vendor. Example figures are fictional. No savings are guaranteed.</div>
+</div>
+</div>
+</body>
+</html>

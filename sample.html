@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sample report | Ledger &amp; Lime</title>
+<meta name="description" content="A fictional sample of the weekly beverage variance report Ledger &amp; Lime delivers.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:Inter,Arial,sans-serif}
+.ll{--ink:#16201B;--forest:#12352A;--forest2:#1C4A3A;--lime:#B7E04B;--gray:#F2F4F1;--gray2:#E3E7E2;--mid:#5B6660;--white:#FFFFFF;background:var(--white);color:var(--ink);line-height:1.55}
+.ll *{box-sizing:border-box}
+.ll h1,.ll h2,.ll h3{font-family:'Space Grotesk',Inter,Arial,sans-serif;margin:0;letter-spacing:-0.01em;text-wrap:balance}
+.ll p{margin:0}
+.ll .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.ll .btn{display:inline-block;background:var(--lime);color:var(--forest);padding:14px 24px;border-radius:8px;text-decoration:none;font-weight:700;font-size:16px}
+.ll .btn:hover{background:#C6EA66;color:var(--forest)}
+.ll .btn2{display:inline-block;border:1.5px solid rgba(255,255,255,0.45);color:#fff;padding:13px 22px;border-radius:8px;text-decoration:none;font-weight:600;font-size:16px}
+.ll .btn2:hover{background:rgba(255,255,255,0.08);color:#fff}
+.ll .eyebrow{font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--forest2)}
+.ll .grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.ll .card{background:var(--white);border:1px solid var(--gray2);border-radius:14px;padding:24px;min-width:0}
+.ll .num{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:var(--forest);color:var(--lime);font-weight:700;font-size:15px;margin-bottom:14px}
+.ll .tag{display:inline-block;font-size:12px;font-weight:700;padding:4px 10px;border-radius:999px}
+.ll table{border-collapse:collapse;width:100%;min-width:620px;font-size:15px}
+.ll th{text-align:left;padding:12px 14px;border-bottom:2px solid var(--ink);font-size:13px;letter-spacing:0.04em;text-transform:uppercase;color:var(--mid)}
+.ll td{padding:14px;border-bottom:1px solid var(--gray2);vertical-align:top}
+.ll a{color:inherit}
+@media (max-width:640px){.ll .hero-pad{padding-top:40px!important;padding-bottom:48px!important}}
+</style>
+<style>
+.ll .nav{display:flex;flex-wrap:wrap;gap:6px 22px;align-items:center}
+.ll .nav a{color:#D3DDD7;text-decoration:none;font-weight:500;font-size:15px}
+.ll .nav a:hover,.ll .nav a.on{color:#fff}.ll .nav a.on{border-bottom:2px solid var(--lime)}
+.ll .doc{background:#fff;border:1px solid var(--gray2);border-radius:14px;box-shadow:0 18px 44px rgba(18,53,42,.12);padding:clamp(18px,4vw,40px)}
+.ll .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));border:1px solid var(--gray2);border-radius:10px;margin:22px 0 8px}
+.ll .stats div{padding:14px 16px;border-right:1px solid var(--gray2);min-width:0}.ll .stats div:last-child{border-right:0}
+.ll .stats small{display:block;color:var(--mid);font-size:12px}.ll .stats b{font:700 26px 'Space Grotesk',sans-serif}.ll .stats .neg{color:#A8431A}
+.ll .rh{font:600 12px Inter,sans-serif;text-transform:uppercase;letter-spacing:.08em;color:var(--mid);margin:34px 0 10px}
+.ll ol.fl{list-style:none;margin:0;padding:0}.ll ol.fl li{display:grid;grid-template-columns:30px 1fr auto;gap:12px;padding:16px 0;border-top:1px solid var(--gray2)}
+.ll ol.fl li:last-child{border-bottom:1px solid var(--gray2)}.ll .fn{font:700 16px 'Space Grotesk',sans-serif;color:var(--forest2)}
+.ll .ft{display:flex;flex-wrap:wrap;gap:8px;align-items:baseline}.ll .ft h3{font-size:16px}
+.ll .tg{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--forest2);border:1px solid var(--gray2);border-radius:4px;padding:1px 6px}
+.ll .fb p{margin:4px 0 0;color:var(--mid)}.ll .fb p.nx{color:var(--ink)}.ll .fa{font:700 20px 'Space Grotesk',sans-serif;white-space:nowrap}
+.ll .tw{overflow-x:auto}.ll .tw table{min-width:560px;font-size:14px}.ll .tw th{padding:8px;font-size:12px}.ll .tw td{padding:8px}
+.ll .r{text-align:right;white-space:nowrap}.ll .st{font-size:12px;color:var(--mid)}.ll .st.recording{color:var(--forest2);font-weight:600}.ll .st.check{color:#A8431A;font-weight:600}
+.ll .fine{color:var(--mid);font-size:12.5px;margin-top:26px;max-width:66ch}
+.ll .ck{list-style:none;margin:12px 0 0;padding:0}.ll .ck li{padding:8px 0 8px 28px;position:relative;border-bottom:1px solid var(--gray2)}.ll .ck li:before{content:"\2713";position:absolute;left:0;color:var(--forest2);font-weight:700}
+@media(max-width:520px){.ll ol.fl li{grid-template-columns:24px 1fr}.ll .fa{grid-column:2}.ll .stats div{border-right:0;border-bottom:1px solid var(--gray2)}}
+</style>
+</head>
+<body>
+<div class="ll">
+<div style="background:var(--forest)">
+<div class="wrap" style="display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between;align-items:center;padding-top:18px;padding-bottom:18px">
+<a href="index.html" style="text-decoration:none;display:flex;align-items:center;gap:10px;color:#fff;font-family:'Space Grotesk',Inter,sans-serif;font-weight:700;font-size:20px"><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:var(--lime)"></span>Ledger &amp; Lime</a>
+<div class="nav"><a href="index.html">Home</a><a href="sample.html" class=on>Sample report</a><a href="how-it-works.html">How it works</a><a href="index.html#contact">Contact</a><a href="index.html#contact" class="btn2" style="padding:9px 16px;font-size:14px;color:#fff">Book a screening call</a></div>
+</div>
+</div>
+
+<div style="background:var(--gray)"><div class="wrap" style="padding-top:56px;padding-bottom:20px">
+<div class="eyebrow">Sample report</div>
+<h1 style="font-size:clamp(32px,5vw,48px);margin:10px 0 14px">This is what you get.</h1>
+<p style="color:var(--mid);font-size:18px;max-width:720px">A real review is built from your own exports and reads like this: what to fix in the system, what to check on the floor, and what is just count noise. Everything below is fictional.</p>
+</div></div>
+<div style="background:var(--gray)"><div class="wrap" style="padding-bottom:64px">
+<div class="doc">
+<div style="font-size:12px;color:var(--mid);border:1px dashed var(--gray2);border-radius:6px;padding:6px 10px;margin-bottom:22px">Sample on fictional data. Harbour &amp; Pine is not a real venue.</div>
+<div class="eyebrow">Ledger &amp; Lime</div>
+<h2 style="font-size:30px;margin:8px 0 4px">Beverage variance review</h2>
+<p style="color:var(--mid)">Harbour &amp; Pine (fictional) &middot; liquor, wine and draft &middot; one inventory period</p>
+<div class="stats"><div><small>Net variance</small><b class="neg">&minus;$497</b></div><div><small>Recording issues</small><b>&minus;$319</b></div><div><small>Needs a physical check</small><b>&minus;$139</b></div><div><small>Within tolerance</small><b>&minus;$39</b></div></div>
+<div class="rh">What we found</div><ol class="fl"><li><div class="fn">1</div><div class="fb"><div class="ft"><span class="tg">Recording</span><h3>Batch yield looks wrong: House Mix</h3></div><p>All 3 House Mix ingredients ran about 35% over recipe together. That pattern points to one batch logged at the wrong yield, not three separate losses.</p><p class="nx"><b>Next:</b> Check the recipe yield and how batches are entered.</p></div><div class="fa">&minus;$229</div></li><li><div class="fn">2</div><div class="fb"><div class="ft"><span class="tg">Physical check</span><h3>Tequila Blanco short by 3.9 bottles</h3></div><p>No recording explanation, and still short after 0.85 L of logged comps and spills.</p><p class="nx"><b>Next:</b> Watch pours, spot-count mid-week, review the comps and spills log.</p></div><div class="fa">&minus;$139</div></li><li><div class="fn">3</div><div class="fb"><div class="ft"><span class="tg">Recording</span><h3>Possible wrong button: Premium Gin Y vs House Gin X</h3></div><p>Premium Gin Y is 2.7 bottles short while House Gin X is 3.0 bottles over. Roughly equal volumes in opposite directions suggest premium pours rung in as house.</p><p class="nx"><b>Next:</b> Compare POS item mapping with what is poured. Ask staff which button they use.</p></div><div class="fa">&minus;$90</div></li></ol>
+<div class="rh">Item detail (bottles unless noted)</div><div class="tw"><table><tr><th>Item</th><th class="r">Expected</th><th class="r">Actual</th><th class="r">Variance</th><th class="r">%</th><th class="r">Value</th><th>Status</th></tr><tr><td>Premium Gin Y</td><td class='r'>6.5</td><td class='r'>9.5</td><td class='r'>-2.7</td><td class='r'>-41.0%</td><td class='r'>&minus;$192</td><td class='st recording'>Recording</td></tr><tr><td>Spirit A (batch base)</td><td class='r'>11.2</td><td class='r'>15.0</td><td class='r'>-3.8</td><td class='r'>-33.7%</td><td class='r'>&minus;$144</td><td class='st recording'>Recording</td></tr><tr><td>Tequila Blanco</td><td class='r'>10.0</td><td class='r'>15.0</td><td class='r'>-3.9</td><td class='r'>-38.7%</td><td class='r'>&minus;$139</td><td class='st check'>Check</td></tr><tr><td>Spirit B (batch base)</td><td class='r'>7.5</td><td class='r'>10.0</td><td class='r'>-2.5</td><td class='r'>-33.7%</td><td class='r'>&minus;$66</td><td class='st recording'>Recording</td></tr><tr><td>Mixer (batch base)</td><td class='r'>14.0</td><td class='r'>19.0</td><td class='r'>-5.0</td><td class='r'>-35.5%</td><td class='r'>&minus;$20</td><td class='st recording'>Recording</td></tr><tr><td>Draft Lager (58.6 L keg)</td><td class='r'>2.9</td><td class='r'>3.0</td><td class='r'>-0.1</td><td class='r'>-2.1%</td><td class='r'>&minus;$11</td><td class='st noise'>Within tolerance</td></tr><tr><td>Rye Whisky</td><td class='r'>6.5</td><td class='r'>7.0</td><td class='r'>-0.3</td><td class='r'>-4.6%</td><td class='r'>&minus;$9</td><td class='st noise'>Within tolerance</td></tr><tr><td>Amaro</td><td class='r'>3.2</td><td class='r'>3.5</td><td class='r'>-0.3</td><td class='r'>-8.2%</td><td class='r'>&minus;$9</td><td class='st noise'>Within tolerance</td></tr><tr><td>Red House Wine</td><td class='r'>14.6</td><td class='r'>15.0</td><td class='r'>-0.4</td><td class='r'>-2.7%</td><td class='r'>&minus;$6</td><td class='st noise'>Within tolerance</td></tr><tr><td>Vodka Z</td><td class='r'>10.5</td><td class='r'>10.8</td><td class='r'>-0.1</td><td class='r'>-1.1%</td><td class='r'>&minus;$4</td><td class='st noise'>Within tolerance</td></tr><tr><td>Dry Vermouth</td><td class='r'>6.0</td><td class='r'>6.0</td><td class='r'>+0.0</td><td class='r'>+0.0%</td><td class='r'>$0</td><td class='st noise'>Within tolerance</td></tr><tr><td>House Gin X</td><td class='r'>10.0</td><td class='r'>7.0</td><td class='r'>+3.0</td><td class='r'>+30.0%</td><td class='r'>+$102</td><td class='st recording'>Recording</td></tr></table></div>
+<div class="rh">Logged waste and comps, by shift</div><div class="tw"><table><tr><th>Shift</th><th>What was logged</th><th class="r">Value</th></tr><tr><td>Sat PM</td><td>Draft Lager (line cleaning), Premium Gin Y (comp), Tequila Blanco (spill + comp)</td><td class='r'>$54</td></tr><tr><td>Fri PM</td><td>Tequila Blanco (comp (regular)), Vodka Z (spill)</td><td class='r'>$16</td></tr><tr><td>Sun PM</td><td>Rye Whisky (comp)</td><td class='r'>$6</td></tr><tr><td>Thu PM</td><td>Tequila Blanco (comp (regular))</td><td class='r'>$5</td></tr></table></div>
+<p class="fine">Variance is expected usage (from sales and recipes) minus actual usage (from counts), plus logged waste and comps; negative means shortage. Differences within a 2% allowance or one bottle are treated as normal. These findings show where to look. They are not proof of loss and not a savings guarantee.</p>
+</div></div></div>
+<div class="wrap" style="padding-top:56px;padding-bottom:56px">
+<div class="grid">
+<div class="card"><h3 style="font-size:19px;margin-bottom:8px">It never points at staff</h3><p style="color:var(--mid)">The review shows what the data supports and what to verify first. Fraud findings aren&rsquo;t part of it.</p></div>
+<div class="card"><h3 style="font-size:19px;margin-bottom:8px">It says what it can&rsquo;t explain</h3><p style="color:var(--mid)">Where exports can&rsquo;t settle a variance, the memo says so and names the extra data that would.</p></div>
+<div class="card"><h3 style="font-size:19px;margin-bottom:8px">It works from your exports</h3><p style="color:var(--mid)">No system access and nothing changed in your POS or inventory software.</p></div>
+</div></div>
+<div style="background:var(--forest);color:#fff">
+<div class="wrap" style="padding-top:56px;padding-bottom:56px">
+<h2 style="font-size:clamp(26px,4vw,36px);margin-bottom:12px">Want this for your venue?</h2>
+<p style="max-width:620px;color:#D3DDD7;margin-bottom:22px">Tell me which variance your team keeps investigating and which system you export from. I&rsquo;ll reply to set up a short screening call.</p>
+<a class="btn" href="mailto:kai.nanji13@gmail.com">Email Kai</a>
+<p style="margin-top:14px;color:#A9B8AF;font-size:14px">kai.nanji13@gmail.com &middot; <a href="https://www.linkedin.com/in/kainanji/" style="color:var(--lime)">LinkedIn</a></p>
+</div></div>
+<div style="background:var(--ink);color:#9AA7A0">
+<div class="wrap" style="padding-top:24px;padding-bottom:24px;font-size:13px">An independent service run by a Toronto bar-operations professional. Not affiliated with any employer, restaurant group or software vendor. Example figures are fictional. No savings are guaranteed.</div>
+</div>
+</div>
+</body>
+</html>
